@@ -5,7 +5,7 @@ import {RouterModule, Routes} from "@angular/router";
 
 import {MainPageComponent} from "./main-page/main-page.component";
 const appRoutes: Routes = [
-  { path:"", component : MainPageComponent"},
+  { path:"", component : MainPageComponent},
   {
     path: "offers",
     loadChildren:"../app/offers/offers.module#OffersModule"
@@ -21,4 +21,4 @@ const appRoutes: Routes = [
   exports:[RouterModule],
   declarations: []
 })
-export class AngularNGRXRoutingModule { }
+export class AppRoutingModule { }
