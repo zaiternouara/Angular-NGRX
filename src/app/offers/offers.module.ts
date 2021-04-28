@@ -11,8 +11,7 @@ import { AllOffersComponent } from './all-offers/all-offers.component';
 
 const offerRoutes: Routes = [
   { path:"", component :  OfferComponent}
-
-];
+ ];
 
 @NgModule({
   imports: [
@@ -20,7 +19,6 @@ const offerRoutes: Routes = [
     RouterModule.forChild(offerRoutes)
   ],
   declarations: [
-    OfferComponent,
     AddOfferComponent,
     UpdateOfferComponent,
     DeleteOfferComponent,
