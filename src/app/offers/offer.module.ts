@@ -1,4 +1,4 @@
-export interface Customer {
+export interface Offer{
   id?: number;
   name: string;
   phone: string;

@@ -12,7 +12,7 @@ offers;
   constructor(private store: Store<any>) { }
 
   ngOnInit(): void {
-    this.store.dispatch({type: 'LOAD_OFFER'})
+    this.store.dispatch({type: 'LOAD_OFFERS'})
     this.store.subscribe(state=>(this.offers=state.offers.offer))
   }
 
