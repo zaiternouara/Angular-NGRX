@@ -25,70 +25,33 @@ export const initialState: OfferState = {
 export function offerrReducer(
   state = initialState,
   action: offerActions.Action
-): CustomerState {
+): OfferState {
   switch (action.type) {
-    case customerActions.CustomerActionTypes.LOAD_CUSTOMERS_SUCCESS: {
-      return customerAdapter.addAll(action.payload, {
+    case  offerActions.OfferActionTypes.LOAD_OFFERS: {
+      return  {
+        ...state,
+        loading: true
+      }
+    }
+    case  offerActions.OfferActionTypes.LOAD_OFFERS_SUCCESS: {
+      return  {
         ...state,
         loading: false,
-        loaded: true
-      });
+        loaded: true,
+        offers: action.payload
+      }
     }
-    case customerActions.CustomerActionTypes.LOAD_CUSTOMERS_FAIL: {
-      return {
+    case  offerActions.OfferActionTypes.LOAD_OFFERS_FAIL: {
+      return  {
         ...state,
-        entities: {},
+        offers:[],
         loading: false,
         loaded: false,
         error: action.payload
-      };
+      }
     }
-
-    case customerActions.CustomerActionTypes.LOAD_CUSTOMER_SUCCESS: {
-      return customerAdapter.addOne(action.payload, {
-        ...state,
-        selectedCustomerId: action.payload.id
-      });
-    }
-    case customerActions.CustomerActionTypes.LOAD_CUSTOMER_FAIL: {
-      return {
-        ...state,
-        error: action.payload
-      };
-    }
-
-    case customerActions.CustomerActionTypes.CREATE_CUSTOMER_SUCCESS: {
-      return customerAdapter.addOne(action.payload, state);
-    }
-    case customerActions.CustomerActionTypes.CREATE_CUSTOMER_FAIL: {
-      return {
-        ...state,
-        error: action.payload
-      };
-    }
-
-    case customerActions.CustomerActionTypes.UPDATE_CUSTOMER_SUCCESS: {
-      return customerAdapter.updateOne(action.payload, state);
-    }
-    case customerActions.CustomerActionTypes.UPDATE_CUSTOMER_FAIL: {
-      return {
-        ...state,
-        error: action.payload
-      };
-    }
-
-    case customerActions.CustomerActionTypes.DELETE_CUSTOMER_SUCCESS: {
-      return customerAdapter.removeOne(action.payload, state);
-    }
-    case customerActions.CustomerActionTypes.DELETE_CUSTOMER_FAIL: {
-      return {
-        ...state,
-        error: action.payload
-      };
-    }
-
-    default: {
+    default:{
       return state;
     }
   }
-}
+  }
