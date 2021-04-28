@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
 
 
-import {Main} from "./main-page/main-page.component";
+import {MainPageComponent} from "./main-page/main-page.component";
 const appRoutes: Routes = [
-  { path:", component : Main"},
+  { path:"", component : MainPageComponent"},
   {
     path: "offers",
     loadChildren:"../app/offers/offers.module#OffersModule"
@@ -15,7 +15,7 @@ const appRoutes: Routes = [
 @NgModule({
 
   imports: [
-    CommonModule
+    CommonModule,
     RouterModule.forRoot(appRoutes)
   ],
   exports:[RouterModule],

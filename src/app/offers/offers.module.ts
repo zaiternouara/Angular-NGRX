@@ -10,7 +10,7 @@ import { DeleteOfferComponent } from './delete-offer/delete-offer.component';
 import { AllOffersComponent } from './all-offers/all-offers.component';
 
 const offerRoutes: Routes = [
-  { path:", component :  OfferComponent"}
+  { path:"", component :  OfferComponent"}
 
 ];
 
