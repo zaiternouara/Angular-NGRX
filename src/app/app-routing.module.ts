@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import {RouterModule, Routes} from "@angular/router";
 
 
@@ -8,7 +9,8 @@ const appRoutes: Routes = [
   { path:"", component : MainPageComponent},
   {
     path: "offers",
-    loadChildren:"../app/offers/offers.module#OffersModule"
+     //loadChildren: "src/app/offers/offers.module#offersModule"
+     loadChildren: () => import('src/app/offers/offers.module').then(m => m.OffersModule)
   }
 ];
 

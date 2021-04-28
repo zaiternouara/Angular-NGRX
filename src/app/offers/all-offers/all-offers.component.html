@@ -14,15 +14,15 @@
       <td colspan="5" class="alert alert-danger" *ngIf="error$ | async as error">{{error}}</td>
     </tr>
     <tr>
-    <tr *ngFor="let customer of (customers$ |async)">
-      <th scope="row">{{customer.name}}</th>
-      <td>{{customer.phone}}</td>
-      <td>{{customer.address}}</td>
-      <td>{{customer.membership}}</td>
+    <tr *ngFor="let offer of (offers$ |async)">
+      <th scope="row">{{offer.name}}</th>
+      <td>{{offer.phone}}</td>
+      <td>{{offer.address}}</td>
+      <td>{{offer.membership}}</td>
       <th>
-        <a (click)=editCustomer(customer)>edit</a>
+        <a (click)=editCustomer(offer)>edit</a>
         <br>
-        <a (click)=deleteCustomer(customer)>delete</a>
+        <a (click)=deleteCustomer(offer)>delete</a>
       </th>
     </tr>
   </tbody>
