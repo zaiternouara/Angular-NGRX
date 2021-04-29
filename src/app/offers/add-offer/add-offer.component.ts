@@ -12,11 +12,15 @@ import { Offer } from "../offer.model";
   styleUrls: ['./add-offer.component.css']
 })
 export class AddOfferComponent implements OnInit {
-  offerForm: FormGroup;
-
+  //  offerForm: FormGroup|undefined;
+offerForm!: FormGroup;
+ name!: string;
+  phone!: number;
+  address!: String;
+  membership!: string;
 
   constructor(
-    private fb: FormBuilder,
+     private fb: FormBuilder,
     private store: Store<fromOffer.AppState>) { }
 
     ngOnInit() {
@@ -26,6 +30,7 @@ export class AddOfferComponent implements OnInit {
          address: ["", Validators.required],
          membership: ["", Validators.required]
        });
+
      }
 
      createOffer() {

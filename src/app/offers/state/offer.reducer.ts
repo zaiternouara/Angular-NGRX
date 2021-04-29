@@ -6,7 +6,7 @@ import * as fromRoot from "../../state/app-state";
 import * as offerActions from "./offer.actions";
 
  export interface OfferState extends EntityState<Offer> {
-   selectedCustomerId: number | null;
+   selectedOfferId: number | null;
    loading: boolean;
    loaded: boolean;
    error: string;
@@ -22,7 +22,7 @@ export const offerAdapter: EntityAdapter<Offer> = createEntityAdapter<
 export const defaultOffer: OfferState = {
   ids: [],
   entities: {},
-  selectedCustomerId: null,
+  selectedOfferId: null,
   loading: false,
   loaded: false,
   error: ""
