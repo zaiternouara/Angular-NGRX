@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from "@ngrx/store";
+import { Observable } from "rxjs";
 
+import * as offerActions from "../state/offer.actions";
+import * as fromOffer from "../state/offer.reducer";
+import { Offer } from "../offer.model";
 
 @Component({
   selector: 'app-all-offers',
@@ -12,7 +16,7 @@ offers;
   constructor(private store: Store<any>) { }
 
   ngOnInit(): void {
-    this.store.dispatch({type: 'LOAD_OFFERS'})
+    this.store.dispatch(new offerActions.LoadOffer());
     this.store.subscribe(state=>(this.offers=state.offers.offer))
   }
 

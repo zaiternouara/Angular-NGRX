@@ -5,7 +5,7 @@ import {RouterModule, Routes} from "@angular/router";
 
 
 import {MainPageComponent} from "./main-page/main-page.component";
-const appRoutes: Routes = [
+const AppRoutes: Routes = [
   { path:"", component : MainPageComponent},
   {
     path: "offers",
@@ -18,7 +18,7 @@ const appRoutes: Routes = [
 
   imports: [
     CommonModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(AppRoutes)
   ],
   exports:[RouterModule],
   declarations: []
