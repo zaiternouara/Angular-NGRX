@@ -9,7 +9,7 @@ import { Offer } from "./offer.model";
   providedIn: "root"
 })
 export class OfferService {
-  private offersUrl = "http://localhost:3000/customers";
+  private offersUrl = "http://localhost:3000/offers";
 
   constructor(private http: HttpClient) {}
 

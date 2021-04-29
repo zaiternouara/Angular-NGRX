@@ -12,12 +12,12 @@ import { Offer } from "../offer.model";
   styleUrls: ['./update-offer.component.css']
 })
 export class UpdateOfferComponent implements OnInit {
-  customerForm: FormGroup;
+  offerForm: FormGroup;
 
 
   constructor(
      private fb: FormBuilder,
-    private store: Store<fromCustomer.AppState>) { }
+    private store: Store<fromOffer.AppState>) { }
 
     ngOnInit() {
       this.offerForm = this.fb.group({

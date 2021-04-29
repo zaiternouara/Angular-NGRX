@@ -3,13 +3,13 @@
  import {Offer} from "../offer.model";
 
  export enum OfferActionTypes{
-   LOAD_OFFERS="[Offer] Load Offers",
+ LOAD_OFFERS="[Offer] Load Offers",
   LOAD_OFFERS_SUCCESS="[Offer] Load Offers Succes",
-  LOAD_OFFERS_FAIL="[Offer] Load Offers FAIL",
-  LOAD_OFFER="[Offer] Load Offer",
- LOAD_OFFER_SUCCESS="[Offer] Load Offer Succes",
- LOAD_OFFER_FAIL="[Offer] Load Offer FAIL",
- CREATE_OFFER="[Offer] Create Offer",
+LOAD_OFFERS_FAIL="[Offer] Load Offers FAIL",
+LOAD_OFFER="[Offer] Load Offer",
+LOAD_OFFER_SUCCESS="[Offer] Load Offer Succes",
+LOAD_OFFER_FAIL="[Offer] Load Offer FAIL",
+CREATE_OFFER="[Offer] Create Offer",
 CREATE_OFFER_SUCCESS="[Offer] Create Offer Succes",
 CREATE_OFFER_FAIL="[Offer] Create Offer FAIL",
 UPDATE_OFFER="[Offer] Update Offer",
@@ -24,13 +24,13 @@ export class  LoadOffers implements Action {
   readonly type = OfferActionTypes.LOAD_OFFERS;
 }
 
-export class  LoadOffersSucces implements Action {
+export class  LoadOffersSuccess implements Action {
   readonly type = OfferActionTypes.LOAD_OFFERS_SUCCESS;
 
   constructor(public payload: Offer[] ){}
 }
 
-export class  LoadOffersFAIL implements Action {
+export class  LoadOffersFail implements Action {
   readonly type = OfferActionTypes.LOAD_OFFERS_FAIL;
   constructor(public payload: string){}
 }
@@ -42,13 +42,13 @@ export class  LoadOffer implements Action {
   constructor(public payload: number) {}
 }
 
-export class  LoadOfferSucces implements Action {
+export class  LoadOfferSuccess implements Action {
   readonly type = OfferActionTypes.LOAD_OFFER_SUCCESS;
 
   constructor(public payload: Offer ){}
 }
 
-export class  LoadOfferFAIL implements Action {
+export class  LoadOfferFail implements Action {
   readonly type = OfferActionTypes.LOAD_OFFER_FAIL;
   constructor(public payload: string){}
 }
@@ -114,8 +114,8 @@ export class DeleteOfferFail implements Action {
 }
 
 export type Actions = LoadOffers
-  | LoadOffersSucces
-  | LoadOffersFAIL
+  | LoadOffersSuccess
+  | LoadOffersFail
   | LoadOffer
   | LoadOfferSuccess
   | LoadOfferFail

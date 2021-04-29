@@ -23,9 +23,9 @@ export class OfferEffect {
       this.offerService.getOffers().pipe(
         map(
           (offers: Offer[]) =>
-            new offerActions.LoadOffersSucces(offers)
+            new offerActions.LoadOffersSuccess(offers)
         ),
-        catchError(err => of(new offerActions.LoadOffersFAIL(err)))
+        catchError(err => of(new offerActions.LoadOffersFail(err)))
       )
     )
   );
