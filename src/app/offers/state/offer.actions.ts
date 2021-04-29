@@ -1,6 +1,6 @@
  import {Action} from "@ngrx/store";
 
- import {Offer} from "../offer.model";
+ import {Offer} from "../offer.module";
 
  export enum OfferActionTypes{
    LOAD_OFFERS="[Offer] Load Offers",
@@ -23,4 +23,4 @@ export class  LoadOffersFAIL implements Action {
   constructor(public payload: string){}
 }
 
-export type Action = LoadOffers | LoadOffersSucces | LoadOffersFAIL;
+export type Actions = LoadOffers | LoadOffersSucces | LoadOffersFAIL;

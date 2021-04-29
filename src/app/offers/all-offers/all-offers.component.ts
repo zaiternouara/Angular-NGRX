@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 
 import * as offerActions from "../state/offer.actions";
 import * as fromOffer from "../state/offer.reducer";
-import { Offer } from "../offer.model";
+import { Offer } from "../offer.module";
 
 @Component({
   selector: 'app-all-offers',

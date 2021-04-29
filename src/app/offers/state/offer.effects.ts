@@ -6,7 +6,7 @@ import { map, mergeMap, catchError } from "rxjs/operators";
 
 import { OfferService } from "../offer.service";
 import * as offerActions from "../state/offer.actions";
-import {Offer } from "../offer.model";
+import {Offer } from "../offer.module";
 @Injectable()
 export class OfferEffect {
   constructor(
@@ -15,9 +15,9 @@ export class OfferEffect {
   ) {}
 
   @Effect()
-  loadCustomers$: Observable<Action> = this.actions$.pipe(
-    ofType<customerActions.LoadOffers>(
-      offerActions.OfferActionTypes.LOAD_Offers
+  LoadOffers$: Observable<Action> = this.actions$.pipe(
+    ofType<offerActions.LoadOffers>(
+      offerActions.OfferActionTypes.LOAD_OFFERS
     ),
     mergeMap((action: offerActions.LoadOffers) =>
       this.offerService.getOffers().pipe(
@@ -29,3 +29,4 @@ export class OfferEffect {
       )
     )
   );
+}

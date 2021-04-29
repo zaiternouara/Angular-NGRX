@@ -1,8 +1,9 @@
- import * as offerActions from "./offer.actions";
- import { Offer } from "../offer.model";
- import * as fromRoot from "../../state/app-state";
+import { Offer } from "../offer.module";
  import { EntityState, EntityAdapter, createEntityAdapter } from "@ngrx/entity";
 import { createFeatureSelector, createSelector } from "@ngrx/store";
+
+import * as fromRoot from "../../state/app-state";
+import * as offerActions from "./offer.actions";
 
  export interface OfferState extends EntityState<Offer> {
    selectedCustomerId: number | null;
@@ -32,7 +33,7 @@ export const initialState = offerAdapter.getInitialState(defaultOffer);
 
 export function OfferReducer(
   state = initialState,
-  action: offerActions.Action
+  action: offerActions.Actions
 ): OfferState {
   switch (action.type) {
     case  offerActions.OfferActionTypes.LOAD_OFFERS: {
