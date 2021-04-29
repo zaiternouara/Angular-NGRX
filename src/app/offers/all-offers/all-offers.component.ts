@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 
 import * as offerActions from "../state/offer.actions";
 import * as fromOffer from "../state/offer.reducer";
-import { Offer } from "../offer.module";
+import { Offer } from "../offer.model";
 
 @Component({
   selector: 'app-all-offers',
@@ -13,11 +13,23 @@ import { Offer } from "../offer.module";
 })
 export class AllOffersComponent implements OnInit {
 offers$ :Observable <Offer[]>;
+error$: Observable<String>;
+
   constructor(private store: Store<fromOffer.AppState>) { }
 
   ngOnInit(): void {
     this.store.dispatch(new offerActions.LoadOffers());
-    this.offers$=this.store.pipe(select(fromOffer.getOffers))
+    this.offers$=this.store.pipe(select(fromOffer.getOffers));
+     this.error$ = this.store.pipe(select(fromOffer.getError));
   }
+  deleteOffer(offer: Offer) {
+  if (confirm("Are You Sure You want to Delete the User?")) {
+    this.store.dispatch(new offerActions.DeleteOffer(offer.id));
+  }
+}
+
+editOffer(offer: Offer) {
+  this.store.dispatch(new offerActions.LoadOffer(offer.id));
+}
 
 }

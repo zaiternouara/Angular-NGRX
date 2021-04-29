@@ -1,5 +1,5 @@
-import { Offer } from "../offer.module";
- import { EntityState, EntityAdapter, createEntityAdapter } from "@ngrx/entity";
+import { Offer } from "../offer.model";
+import { EntityState, EntityAdapter, createEntityAdapter } from "@ngrx/entity";
 import { createFeatureSelector, createSelector } from "@ngrx/store";
 
 import * as fromRoot from "../../state/app-state";
@@ -33,15 +33,10 @@ export const initialState = offerAdapter.getInitialState(defaultOffer);
 
 export function OfferReducer(
   state = initialState,
-  action: offerActions.Actions
+  action: offerActions.Action
 ): OfferState {
   switch (action.type) {
-    case  offerActions.OfferActionTypes.LOAD_OFFERS: {
-      return  {
-        ...state,
-        loading: true
-      }
-    }
+
     case  offerActions.OfferActionTypes.LOAD_OFFERS_SUCCESS: {
       return offerAdapter.addAll(action.payload, {
         ...state,
@@ -56,8 +51,65 @@ export function OfferReducer(
         loading: false,
         loaded: false,
         error: action.payload
-      }
+      };
     }
+
+
+
+
+
+
+    case  offerActions.OfferActionTypes.LOAD_OFFER_SUCCESS: {
+      return offerAdapter.addOne(action.payload, {
+        ...state,
+       selectedOfferId: action.payload.id
+      });
+    }
+    case  offerActions.OfferActionTypes.LOAD_OFFER_FAIL: {
+      return  {
+        ...state,
+
+        error: action.payload
+      };
+    }
+
+
+
+    case  offerActions.OfferActionTypes.CREATE_OFFER_SUCCESS: {
+      return offerAdapter.addOne(action.payload,state);
+    }
+
+    case  offerActions.OfferActionTypes.CREATE_OFFER_FAIL: {
+      return  {
+        ...state,
+
+        error: action.payload
+      };
+    }
+
+
+
+        case offerActions.OfferActionTypes.UPDATE_OFFER_SUCCESS: {
+          return offerAdapter.updateOne(action.payload, state);
+        }
+        case offerActions.OfferActionTypes.UPDATE_OFFER_FAIL: {
+          return {
+            ...state,
+            error: action.payload
+          };
+        }
+
+        case offerActions.OfferActionTypes.DELETE_OFFER_SUCCESS: {
+          return offerAdapter.removeOne(action.payload, state);
+        }
+        case offerActions.OfferActionTypes.DELETE_OFFER_FAIL: {
+          return {
+            ...state,
+            error: action.payload
+          };
+        }
+
+
     default:{
       return state;
     }
@@ -83,4 +135,13 @@ export const getOffersLoaded = createSelector(
 export const getError = createSelector(
   getOfferFeatureState,
   (state:OfferState)=>state.error
+);
+export const getCurrentOfferId = createSelector(
+  getOfferFeatureState,
+  (state: OfferState) => state.selectedOfferId
+);
+export const getCurrentOffer = createSelector(
+  getOfferFeatureState,
+  getCurrentOfferId,
+  state => state.entities[state.selectedOfferId]
 );
