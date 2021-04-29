@@ -12,7 +12,7 @@ import { Offer } from "../offer.model";
   styleUrls: ['./all-offers.component.css']
 })
 export class AllOffersComponent implements OnInit {
-offers:Observable <Offer[]>;
+offers$ :Observable <Offer[]>;
   constructor(private store: Store<fromOffer.AppState>) { }
 
   ngOnInit(): void {

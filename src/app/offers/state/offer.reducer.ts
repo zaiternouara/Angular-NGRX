@@ -42,7 +42,7 @@ export function OfferReducer(
       }
     }
     case  offerActions.OfferActionTypes.LOAD_OFFERS_SUCCESS: {
-      return  return  offerAdapter.addAll(action.payload, {
+      return offerAdapter.addAll(action.payload, {
         ...state,
         loading: false,
         loaded: true
