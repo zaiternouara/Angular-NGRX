@@ -1,7 +1,7 @@
  import * as offerActions from "./offer.actions";
  import { Offer } from "../offer.model";
  import * as fromRoot from "../../state/app-state";
-
+import { createFeatureSelector, createSelector } from "@ngrx/store";
 
  export interface OfferState extends EntityState<Offer> {
    selectedCustomerId: number | null;
@@ -55,3 +55,24 @@ export function offerrReducer(
     }
   }
   }
+
+  const getOfferFeatureState = createFeatureSelector<OfferState>(
+    "offers"
+  );
+
+export const getOffers = createSelector(
+  getOfferFeatureState,
+  (state:OfferState)=>state.offers
+);
+export const getOffersLoading = createSelector(
+  getOfferFeatureState,
+  (state:OfferState)=>state.loading
+);
+export const getOffersLoaded = createSelector(
+  getOfferFeatureState,
+  (state:OfferState)=>state.loaded
+);
+export const getError = createSelector(
+  getOfferFeatureState,
+  (state:OfferState)=>state.error
+);

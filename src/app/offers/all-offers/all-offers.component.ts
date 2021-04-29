@@ -12,12 +12,12 @@ import { Offer } from "../offer.model";
   styleUrls: ['./all-offers.component.css']
 })
 export class AllOffersComponent implements OnInit {
-offers;
-  constructor(private store: Store<any>) { }
+offers:Observable <Offer[]>;
+  constructor(private store: Store<fromOffer.AppState>) { }
 
   ngOnInit(): void {
     this.store.dispatch(new offerActions.LoadOffer());
-    this.store.subscribe(state=>(this.offers=state.offers.offer))
+    this.offers$=this.store.pipe(select(fromOffer.getOffers))
   }
 
 }
