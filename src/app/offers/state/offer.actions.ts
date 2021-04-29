@@ -18,7 +18,7 @@ export class  LoadOffersSucces implements Action {
   constructor(public payload: Offer[] ){}
 }
 
-export class  LoadOffersEFAIL implements Action {
+export class  LoadOffersFAIL implements Action {
   readonly type = OfferActionTypes.LOAD_OFFERS_FAIL;
   constructor(public payload: string){}
 }

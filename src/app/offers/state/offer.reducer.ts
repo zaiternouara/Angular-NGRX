@@ -30,7 +30,7 @@ export const defaultOffer: OfferState = {
 export const initialState = offerAdapter.getInitialState(defaultOffer);
 
 
-export function offerrReducer(
+export function OfferReducer(
   state = initialState,
   action: offerActions.Action
 ): OfferState {

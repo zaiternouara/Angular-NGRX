@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
 import { StoreModule } from "@ngrx/store";
 import { OfferReducer } from "./state/offer.reducer";
-import { OfferEffect } from "./state/customer.effects";
+import { OfferEffect } from "./state/offer.effects";
 import { EffectsModule, Actions } from "@ngrx/effects";
 import { OfferComponent } from './offer/offer.component';
 import { AddOfferComponent } from './add-offer/add-offer.component';

@@ -16,7 +16,7 @@ offers:Observable <Offer[]>;
   constructor(private store: Store<fromOffer.AppState>) { }
 
   ngOnInit(): void {
-    this.store.dispatch(new offerActions.LoadOffer());
+    this.store.dispatch(new offerActions.LoadOffers());
     this.offers$=this.store.pipe(select(fromOffer.getOffers))
   }
 
