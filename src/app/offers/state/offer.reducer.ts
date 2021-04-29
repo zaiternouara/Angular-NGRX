@@ -1,6 +1,7 @@
  import * as offerActions from "./offer.actions";
  import { Offer } from "../offer.model";
  import * as fromRoot from "../../state/app-state";
+ import { EntityState, EntityAdapter, createEntityAdapter } from "@ngrx/entity";
 import { createFeatureSelector, createSelector } from "@ngrx/store";
 
  export interface OfferState extends EntityState<Offer> {
@@ -13,13 +14,20 @@ import { createFeatureSelector, createSelector } from "@ngrx/store";
  export interface AppState extends fromRoot.AppState {
   offers: OfferState;
 }
+export const offerAdapter: EntityAdapter<Offer> = createEntityAdapter<
+  Offer
+>();
 
-export const initialState: OfferState = {
-  offers:[],
+export const defaultOffer: OfferState = {
+  ids: [],
+  entities: {},
+  selectedCustomerId: null,
   loading: false,
   loaded: false,
   error: ""
-}
+};
+
+export const initialState = offerAdapter.getInitialState(defaultOffer);
 
 
 export function offerrReducer(
@@ -34,17 +42,16 @@ export function offerrReducer(
       }
     }
     case  offerActions.OfferActionTypes.LOAD_OFFERS_SUCCESS: {
-      return  {
+      return  return  offerAdapter.addAll(action.payload, {
         ...state,
         loading: false,
-        loaded: true,
-        offers: action.payload
-      }
+        loaded: true
+      });
     }
     case  offerActions.OfferActionTypes.LOAD_OFFERS_FAIL: {
       return  {
         ...state,
-        offers:[],
+        entities:{},
         loading: false,
         loaded: false,
         error: action.payload
@@ -62,7 +69,7 @@ export function offerrReducer(
 
 export const getOffers = createSelector(
   getOfferFeatureState,
-  (state:OfferState)=>state.offers
+  offerAdapter.getSelectors().selectAll
 );
 export const getOffersLoading = createSelector(
   getOfferFeatureState,
