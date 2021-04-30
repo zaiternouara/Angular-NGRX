@@ -4,9 +4,9 @@
     <tr class="table-primary">
 
       <th scope="col">Name</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Address</th>
-      <th scope="col">Membership</th>
+      <th scope="col">ville depart</th>
+      <th scope="col">ville arrive</th>
+      <th scope="col">date offre</th>
       <th></th>
     </tr>
   </thead>
@@ -17,9 +17,9 @@
     <tr>
     <tr *ngFor="let offer of (offers$ |async)">
       <th scope="row">{{offer.name}}</th>
-      <td>{{offer.phone}}</td>
-      <td>{{offer.address}}</td>
-      <td>{{offer.membership}}</td>
+      <td>{{offer.villeD}}</td>
+      <td>{{offer.villeA}}</td>
+      <td>{{offer.dateO}}</td>
       <th>
         <a (click)=editOffer(offer)>edit</a>
         <br>

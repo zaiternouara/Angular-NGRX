@@ -4,26 +4,26 @@
   <form [formGroup]="offerForm" (submit)="createOffer()" class="form-inline mb-4">
     <label class="sr-only" for="Name">Name</label>
     <div class="input-group mb-2 mr-sm-2">
-      <input type="text" class="form-control" formControlName="name" placeholder="name">
+      <input type="text" class="form-control" formControlName="name" placeholder="nom de employe">
     </div>
 
-    <label class="sr-only" for="Phone">Phone</label>
+    <label class="sr-only" for="VilleD">ville de depart</label>
     <div class="input-group mb-2 mr-sm-2">
-      <input type="text" class="form-control" formControlName="phone" placeholder="Phone">
+      <input type="text" class="form-control" formControlName="villeD" placeholder="ville de depart">
     </div>
 
-    <label class="sr-only" for="Address">Address</label>
+    <label class="sr-only" for="VilleA">Ville darrrive</label>
     <div class="input-group mb-2 mr-sm-2">
-      <input type="text" class="form-control" formControlName="address" placeholder="Address">
+      <input type="text" class="form-control" formControlName="villeA" placeholder="ville arrivee">
     </div>
 
-    <label class="sr-only" for="membership">Membership</label>
+    <label class="sr-only" for="dateO">date de offre</label>
     <div class="input-group mb-2 mr-sm-2">
-      <select formControlName="membership" class="form-control">
+      <select formControlName="dateO" class="form-control">
         <option>Basic</option>
         <option>Pro</option>
         <option>Platinum</option>
       </select>
     </div>
-    <button type="submit" class="btn btn-primary mb-2">Add Customer</button>
+    <button type="submit" class="btn btn-primary mb-2">Add Offer</button>
   </form>

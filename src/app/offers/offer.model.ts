@@ -1,7 +1,7 @@
 export interface Offer{
   id?: number;
   name: string;
-  phone: string;
-  address: string;
-  membership: string;
+  villeD: string;
+  villeA: string;
+  dateO: string;
 }

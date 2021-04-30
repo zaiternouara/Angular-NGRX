@@ -22,9 +22,9 @@ export class UpdateOfferComponent implements OnInit {
     ngOnInit() {
       this.offerForm = this.fb.group({
         name: ["", Validators.required],
-        phone: ["", Validators.required],
-        address: ["", Validators.required],
-        membership: ["", Validators.required],
+        villeD: ["", Validators.required],
+        villeA: ["", Validators.required],
+        dateO: ["", Validators.required],
         id: null
       })
 
@@ -36,9 +36,9 @@ export class UpdateOfferComponent implements OnInit {
         if (currentOffer) {
           this.offerForm.patchValue({
             name: currentOffer.name,
-            phone: currentOffer.phone,
-            address: currentOffer.address,
-            membership: currentOffer.membership,
+            villeD: currentOffer.villeD,
+            villeA: currentOffer.villeA,
+            dateO: currentOffer.dateO,
             id: currentOffer.id
           });
         }
@@ -48,9 +48,9 @@ export class UpdateOfferComponent implements OnInit {
     updateOffer() {
       const updatedOffer: Offer = {
         name: this.offerForm.get("name").value,
-        phone: this.offerForm.get("phone").value,
-        address: this.offerForm.get("address").value,
-        membership: this.offerForm.get("membership").value,
+        villeD: this.offerForm.get("villeD").value,
+        villeA: this.offerForm.get("villeA").value,
+        dateO: this.offerForm.get("dateO").value,
         id: this.offerForm.get("id").value
       };
 

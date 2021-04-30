@@ -17,6 +17,7 @@ import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './main-page/main-page.component';
 
+
 @NgModule({
 
   imports: [
@@ -34,6 +35,7 @@ import { MainPageComponent } from './main-page/main-page.component';
   declarations: [
     AppComponent,
     MainPageComponent
+
   ],
   bootstrap: [AppComponent]
 })

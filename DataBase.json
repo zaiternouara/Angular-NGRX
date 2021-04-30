@@ -1,25 +1,18 @@
 {
   "offers": [
     {
-      "name": "zaiter",
-      "phone": "0556056381",
-      "id": 1,
-      "address": "string",
-      "membership": "string"
+      "name": "Z",
+      "villeD": "ALGER",
+      "villeA": "ALGER",
+      "dateO": "Pro",
+      "id": 5
     },
     {
-      "name": "hey",
-      "phone": "0588056381",
-      "id": 2,
-      "address": "string",
-      "membership": "string"
-    },
-    {
-      "name": "amira",
-      "phone": "20982",
-      "address": "uufn",
-      "membership": "Basic",
-      "id": 3
+      "name": "Amira Benrabah",
+      "villeD": "ALGER",
+      "villeA": "ALGER",
+      "dateO": "Basic",
+      "id": 4
     }
   ]
 }
