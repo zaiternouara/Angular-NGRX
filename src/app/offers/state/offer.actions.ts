@@ -1,6 +1,6 @@
  import {Action} from "@ngrx/store";
  import { Update } from "@ngrx/entity";
- import {Offer} from "../offer.model";
+ import {Offer, OfferSearch} from "../offer.model";
 
  export enum OfferActionTypes{
  LOAD_OFFERS="[Offer] Load Offers",
@@ -118,6 +118,7 @@ export class DeleteOfferFail implements Action {
 
  export class SearchOffers implements Action {
   readonly type =  OfferActionTypes.SEARCH_OFFERS;
+  constructor(public payload: Offer)
 
 }
 
