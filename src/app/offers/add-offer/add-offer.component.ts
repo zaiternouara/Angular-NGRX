@@ -12,7 +12,7 @@ import { Offer } from "../offer.model";
   styleUrls: ['./add-offer.component.css']
 })
 export class AddOfferComponent implements OnInit {
-  offerForm: FormGroup;
+  offerForm!: FormGroup;
 
 
   constructor(
