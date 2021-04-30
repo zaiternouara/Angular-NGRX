@@ -1,6 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from "@angular/common/http";
+import {
+  StoreRouterConnectingModule,
+  routerReducer,
+  RouterStateSerializer
+} from "@ngrx/router-store";
+
+import { OfferSerializer } from "./shared/utils";
+
 
 import{StoreModule} from "@ngrx/store";
 import { EffectsModule } from "@ngrx/effects";
@@ -13,13 +21,16 @@ import { MainPageComponent } from './main-page/main-page.component';
 
   imports: [
     BrowserModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({
+      router: routerReducer
+    }),
+    StoreRouterConnectingModule.forRoot({ stateKey: "router" }),
     StoreDevtoolsModule.instrument(),
     AppRoutingModule,
     EffectsModule.forRoot([]),
     HttpClientModule
   ],
-  providers: [],
+  providers: [{ provide: RouterStateSerializer, useClass: OfferSerializer }],
   declarations: [
     AppComponent,
     MainPageComponent
