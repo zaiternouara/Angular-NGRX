@@ -1,18 +1,25 @@
 {
-  "offers":[
+  "offers": [
     {
-      "name":"zaiter",
-      "phone":"0556056381",
-      "id":1,
+      "name": "zaiter",
+      "phone": "0556056381",
+      "id": 1,
       "address": "string",
       "membership": "string"
     },
     {
-      "name":"hey",
-      "phone":"0588056381",
-      "id":2,
-       "address": "string",
+      "name": "hey",
+      "phone": "0588056381",
+      "id": 2,
+      "address": "string",
       "membership": "string"
+    },
+    {
+      "name": "amira",
+      "phone": "20982",
+      "address": "uufn",
+      "membership": "Basic",
+      "id": 3
     }
   ]
 }
