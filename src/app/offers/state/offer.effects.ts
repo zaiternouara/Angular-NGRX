@@ -103,7 +103,7 @@ export class OfferEffect {
  @Effect()
   searchOffer$: Observable<Action>  = this.actions$.pipe(
       ofType<offerActions.SearchOffers>(
-      filter(),
+       
       offerActions.OfferActionTypes.SEARCH_OFFERS
   ) ,mergeMap((actions: offerActions.SearchOffers) =>
     this.offerService.getOffers().pipe(

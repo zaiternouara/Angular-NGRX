@@ -118,7 +118,7 @@ export class DeleteOfferFail implements Action {
 
  export class SearchOffers implements Action {
   readonly type =  OfferActionTypes.SEARCH_OFFERS;
-  constructor(public payload: Offer)
+  constructor(public payload: OfferSearch){}
 
 }
 

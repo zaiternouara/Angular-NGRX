@@ -5,7 +5,6 @@ import * as offerActions from "../state/offer.actions";
 import * as fromOffer from "../state/offer.reducer";
 import { Offer,OfferSearch } from "../offer.model";
 import { Observable } from "rxjs";
-import * as fromOffer from "../state/offer.reducer";
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -14,6 +13,8 @@ import * as fromOffer from "../state/offer.reducer";
 export class SearchComponent implements OnInit {
 
   offerForm!: FormGroup;
+  offers$ :Observable <Offer[]>;
+  error$: Observable<String>;
  constructor(
      private fb: FormBuilder,
     private store: Store<fromOffer.AppState>) { }
