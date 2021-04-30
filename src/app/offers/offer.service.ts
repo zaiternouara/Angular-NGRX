@@ -35,4 +35,8 @@ export class OfferService {
   deleteOffer(payload: number) {
     return this.http.delete(`${this.offersUrl}/${payload}`);
   }
+
+  SearchOffer(payload: string) : Observable<Offer>{
+    return this.http.post<Offer>(this.offersUrl, payload);
+  }
 }

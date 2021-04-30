@@ -3,7 +3,7 @@ import { Actions, Effect, ofType } from "@ngrx/effects";
 import { Action } from "@ngrx/store";
 import { Observable, of } from "rxjs";
 import { map, mergeMap, catchError } from "rxjs/operators";
-
+import { filter } from 'rxjs/operators';
 import { OfferService } from "../offer.service";
 import * as offerActions from "../state/offer.actions";
 import {Offer } from "../offer.model";
@@ -100,18 +100,42 @@ export class OfferEffect {
   );
 
 
-  @Effect()
-  searchOffer$: Observable<Action>  = this.actions$.pipe(
-      ofType<offerActions.SearchOffers>(
-      offerActions.OfferActionTypes.SEARCH_OFFERS
-  ) ,mergeMap((actions: offerActions.SearchOffers) =>
-    this.offerService.getOffers().pipe(
-      map(
-        (offers: Offer[]) =>
-          new offerActions.LoadSearchOffersSuccess(offers)
-      ),
-      catchError(err => of(new offerActions.LoadSearchOffersFail(err)))
+
+   /*@Effect()
+    searchOffer$: Observable<Action>  = this.actions$.pipe(
+        ofType<offerActions.SearchOffers>(
+
+        offerActions.OfferActionTypes.SEARCH_OFFERS
+    ) ,map((action: offerActions.SearchOffers) => action.payload)
+    , mergeMap((name: string) =>
+      this.offerService.selectBookByname(name).pipe(
+        map(
+          (offers: Offer[]) =>
+            new offerActions.LoadSearchOffersSuccess(offers)
+        ),
+        catchError(err => of(new offerActions.LoadSearchOffersFail(err)))
+      )
+    ));*/
+
+
+
+
+  /*@Effect()
+  load$ = this.actions$
+    .ofType(offerActions.LoadOffers)
+      .pipe(
+        mergeMap(() => {
+          return this.offerService.getContentsFromApi()
+            .pipe(
+              map((offers: Offer[]) => {
+                return new new offerActions.LoadSearchOffersSuccess(offers);
+              }),
+              catchError(() => {
+                // do something
+              })
+            );
+        })
     )
-  ));
+  ;*/
 
 }

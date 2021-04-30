@@ -14,6 +14,7 @@ import { Offer } from "../offer.model";
 export class AllOffersComponent implements OnInit {
 offers$ :Observable <Offer[]>;
 error$: Observable<String>;
+search:string;
 
   constructor(private store: Store<fromOffer.AppState>) { }
 
