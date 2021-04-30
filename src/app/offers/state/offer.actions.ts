@@ -113,7 +113,7 @@ export class DeleteOfferFail implements Action {
   constructor(public payload: string) {}
 }
 
-export type Actions = LoadOffers
+export type Action = LoadOffers
   | LoadOffersSuccess
   | LoadOffersFail
   | LoadOffer
