@@ -111,7 +111,7 @@ export function OfferReducer(
 
 
 
-        case  offerActions.OfferActionTypes.LOAD_SEARCH_OFFERS_SUCCESS: {
+        /*case  offerActions.OfferActionTypes.LOAD_SEARCH_OFFERS_SUCCESS: {
           return offerAdapter.addMany(action.payload, {
             ...state,
             loading: false,
@@ -126,7 +126,7 @@ export function OfferReducer(
             loaded: false,
             error: action.payload
           };
-        }
+        }*/
 
     default:{
       return state;
@@ -163,3 +163,10 @@ export const getCurrentOffer = createSelector(
   getCurrentOfferId,
   state => state.entities[state.selectedOfferId]
 );
+
+ /*export const selectOfferByname = createSelector(
+  getOffers,
+  (all : Offer[], props) => {
+    const { name} = props;
+    return all.filter((a : Offer[],) => a.name.toLocaleLowerCase().includes(name.toLocaleLowerCase()));
+} )*/

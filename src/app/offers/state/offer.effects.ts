@@ -100,20 +100,26 @@ export class OfferEffect {
   );
 
 
- @Effect()
-  searchOffer$: Observable<Action>  = this.actions$.pipe(
-      ofType<offerActions.SearchOffers>(
-      
-      offerActions.OfferActionTypes.SEARCH_OFFERS
-  ) ,mergeMap((actions: offerActions.SearchOffers) =>
-    this.offerService.getOffers().pipe(
-      map(
-        (offers: Offer[]) =>
-          new offerActions.LoadSearchOffersSuccess(offers)
-      ),
-      catchError(err => of(new offerActions.LoadSearchOffersFail(err)))
-    )
-  ));
+
+   /*@Effect()
+    searchOffer$: Observable<Action>  = this.actions$.pipe(
+        ofType<offerActions.SearchOffers>(
+
+        offerActions.OfferActionTypes.SEARCH_OFFERS
+    ) ,map((action: offerActions.SearchOffers) => action.payload)
+    , mergeMap((name: string) =>
+      this.offerService.selectBookByname(name).pipe(
+        map(
+          (offers: Offer[]) =>
+            new offerActions.LoadSearchOffersSuccess(offers)
+        ),
+        catchError(err => of(new offerActions.LoadSearchOffersFail(err)))
+      )
+    ));*/
+
+
+
+
   /*@Effect()
   load$ = this.actions$
     .ofType(offerActions.LoadOffers)
