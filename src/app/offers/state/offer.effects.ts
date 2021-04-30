@@ -98,4 +98,20 @@ export class OfferEffect {
       )
     )
   );
+
+
+  /*@Effect()
+  searchOffer$: Observable<Action>  = this.actions$.pipe(
+      ofType<offerActions.DeleteOffer>(
+      offerActions.OfferActionTypes.SEARCH_OFFERS
+  ) mergeMap((actions: offerActions.SearchOffers) =>
+    this.offerService.getOffers().pipe(
+      map(
+        (offers: Offer[]) =>
+          new offerActions.LoadSearchOffersSuccess(offers)
+      ),
+      catchError(err => of(new offerActions.LoadSearchOffersFail(err)))
+    )
+  );*/
+
 }

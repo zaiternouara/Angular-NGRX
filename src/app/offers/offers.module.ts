@@ -11,6 +11,7 @@ import { AddOfferComponent } from './add-offer/add-offer.component';
 import { UpdateOfferComponent } from './update-offer/update-offer.component';
 import { DeleteOfferComponent } from './delete-offer/delete-offer.component';
 import { AllOffersComponent } from './all-offers/all-offers.component';
+import { SearchComponent } from './search/search.component'; 
 
 const OfferRoutes: Routes = [
   { path:"", component :  OfferComponent}
@@ -30,7 +31,8 @@ const OfferRoutes: Routes = [
     AddOfferComponent,
     UpdateOfferComponent,
     DeleteOfferComponent,
-    AllOffersComponent
+    AllOffersComponent,
+    SearchComponent
   ]
 
 })

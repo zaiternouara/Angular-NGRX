@@ -17,9 +17,12 @@ UPDATE_OFFER_SUCCESS="[Offer] Update Offer Succes",
 UPDATE_OFFER_FAIL="[Offer] Update Offer FAIL",
 DELETE_OFFER="[Offer] Delete Offer",
 DELETE_OFFER_SUCCESS="[Offer] Delete Offer Succes",
-DELETE_OFFER_FAIL="[Offer] Delete Offer FAIL"
-}
+DELETE_OFFER_FAIL="[Offer] Delete Offer FAIL",
 
+}
+/*SEARCH_OFFERS= "[Offer] Search Offers",
+LOAD_SEARCH_OFFERS_SUCCESS= "[Offer] Load Search Offers Success",
+LOAD_SEARCH_OFFERS_FAIL="[Offer] Load Search Offers Fail"*/
 export class  LoadOffers implements Action {
   readonly type = OfferActionTypes.LOAD_OFFERS;
 }
@@ -113,6 +116,22 @@ export class DeleteOfferFail implements Action {
   constructor(public payload: string) {}
 }
 
+
+/*export class SearchOffers implements Action {
+  readonly type =  OfferActionTypes.SEARCH_OFFERS;
+
+}
+
+export class LoadSearchOffersSuccess implements Action {
+  readonly type = OfferActionTypes.LOAD_SEARCH_OFFERS_SUCCESS;
+  constructor(public payload: Offer[]) { }
+}
+
+export class LoadSearchOffersFail implements Action {
+  readonly type = OfferActionTypes.LOAD_SEARCH_OFFERS_FAIL;
+  constructor(public payload: sting) { }
+}*/
+
 export type SettingsAction = LoadOffers
   | LoadOffersSuccess
   | LoadOffersFail
@@ -128,3 +147,6 @@ export type SettingsAction = LoadOffers
   | DeleteOffer
   | DeleteOfferSuccess
   | DeleteOfferFail;
+  /*| SearchOffers
+  | LoadSearchOffersFail
+  | LoadSearchOffersSuccess*/
