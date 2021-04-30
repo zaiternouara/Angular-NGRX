@@ -38,7 +38,7 @@ export function OfferReducer(
   switch (action.type) {
 
     case  offerActions.OfferActionTypes.LOAD_OFFERS_SUCCESS: {
-      return offerAdapter.addAll(action.payload, {
+      return offerAdapter.addMany(action.payload, {
         ...state,
         loading: false,
         loaded: true

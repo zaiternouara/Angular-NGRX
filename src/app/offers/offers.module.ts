@@ -26,6 +26,7 @@ const OfferRoutes: Routes = [
     EffectsModule.forFeature([OfferEffect])
   ],
   declarations: [
+    OfferComponent,
     AddOfferComponent,
     UpdateOfferComponent,
     DeleteOfferComponent,
