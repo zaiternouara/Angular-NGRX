@@ -22,9 +22,9 @@ export class AddOfferComponent implements OnInit {
     ngOnInit() {
        this.offerForm = this.fb.group({
          name: ["", Validators.required],
-         phone: ["", Validators.required],
-         address: ["", Validators.required],
-         membership: ["", Validators.required]
+         villeD: ["", Validators.required],
+         villeA: ["", Validators.required],
+         dateO: ["", Validators.required]
        });
 
      }
@@ -32,9 +32,9 @@ export class AddOfferComponent implements OnInit {
      createOffer() {
    const newOffer: Offer = {
      name: this.offerForm.get("name").value,
-     phone: this.offerForm.get("phone").value,
-     address: this.offerForm.get("address").value,
-     membership: this.offerForm.get("membership").value
+     villeD: this.offerForm.get("villeD").value,
+     villeA: this.offerForm.get("villeA").value,
+     dateO: this.offerForm.get("dateO").value
    };
 
    this.store.dispatch(new offerActions.CreateOffer(newOffer));
