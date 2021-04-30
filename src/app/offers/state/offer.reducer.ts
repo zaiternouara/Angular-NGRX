@@ -29,11 +29,11 @@ export const defaultOffer: OfferState = {
 };
 
 export const initialState = offerAdapter.getInitialState(defaultOffer);
- 
+
 
 export function OfferReducer(
   state = initialState,
-  action: offerActions.Action
+  action: offerActions.SettingsAction
 ): OfferState {
   switch (action.type) {
 
