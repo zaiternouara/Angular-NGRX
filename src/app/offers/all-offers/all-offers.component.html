@@ -1,4 +1,5 @@
 <h3>Offers</h3>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <table class="table table-hover">
   <thead>
     <tr class="table-primary">
@@ -20,10 +21,16 @@
       <td>{{offer.villeD}}</td>
       <td>{{offer.villeA}}</td>
       <td>{{offer.dateO}}</td>
+    <!--  <td>
+                            <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        </td>-->
+
       <th>
-        <a (click)=editOffer(offer)>edit</a>
+        <a class="add" title="Add" data-toggle="tooltip"(click)=editOffer(offer)><i class="material-icons">&#xE254; </i></a>
         <br>
-        <a (click)=deleteOffer(offer)>delete</a>
+        <a class="delete" title="Delete" data-toggle="tooltip"(click)=deleteOffer(offer)><i class="material-icons">&#xE872;</i></a>
       </th>
     </tr>
   </tbody>
