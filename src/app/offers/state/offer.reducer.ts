@@ -111,14 +111,14 @@ export function OfferReducer(
 
 
 
-        /*case  offerActions.OfferActionTypes.LOAD_SEARCH_OFFERS_SUCCESS: {
+        case  offerActions.OfferActionTypes.LOAD_SEARCH_OFFERS_SUCCESS: {
           return offerAdapter.addMany(action.payload, {
             ...state,
             loading: false,
             loaded: true
           });
         }
-        case  offerActions.OfferActionTypes.LOAD_SEARCH_OFFERS_SUCCESS_FAIL: {
+        case  offerActions.OfferActionTypes.LOAD_SEARCH_OFFERS_FAIL: {
           return  {
             ...state,
             entities:{},
@@ -126,7 +126,7 @@ export function OfferReducer(
             loaded: false,
             error: action.payload
           };
-        }*/
+        }
 
     default:{
       return state;

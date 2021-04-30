@@ -100,11 +100,11 @@ export class OfferEffect {
   );
 
 
-  /*@Effect()
+  @Effect()
   searchOffer$: Observable<Action>  = this.actions$.pipe(
-      ofType<offerActions.DeleteOffer>(
+      ofType<offerActions.SearchOffers>(
       offerActions.OfferActionTypes.SEARCH_OFFERS
-  ) mergeMap((actions: offerActions.SearchOffers) =>
+  ) ,mergeMap((actions: offerActions.SearchOffers) =>
     this.offerService.getOffers().pipe(
       map(
         (offers: Offer[]) =>
@@ -112,6 +112,6 @@ export class OfferEffect {
       ),
       catchError(err => of(new offerActions.LoadSearchOffersFail(err)))
     )
-  );*/
+  ));
 
 }
