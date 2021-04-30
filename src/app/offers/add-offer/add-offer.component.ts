@@ -12,12 +12,8 @@ import { Offer } from "../offer.model";
   styleUrls: ['./add-offer.component.css']
 })
 export class AddOfferComponent implements OnInit {
-  //  offerForm: FormGroup|undefined;
-offerForm!: FormGroup;
- name!: string;
-  phone!: number;
-  address!: String;
-  membership!: string;
+  offerForm!: FormGroup;
+
 
   constructor(
      private fb: FormBuilder,
