@@ -12,11 +12,7 @@ const AppRoutes: Routes = [
      //loadChildren: "src/app/offers/offers.module#offersModule"
      loadChildren: () => import('src/app/offers/offers.module').then(m => m.OffersModule)
   },
-  {
-    path: "employees",
-     //loadChildren: "src/app/offers/offers.module#offersModule"
-     loadChildren: () => import('src/app/emplyees/employees.module').then(m => m.EmployeesModule)
-  }
+   
 ];
 
 @NgModule({
