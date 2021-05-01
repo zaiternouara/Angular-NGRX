@@ -16,7 +16,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
  import { AppComponent } from './app.component';
  import { MainPageComponent } from './main-page/main-page.component';
- 
+
 
 @NgModule({
 

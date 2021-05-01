@@ -12,7 +12,6 @@ const AppRoutes: Routes = [
      //loadChildren: "src/app/offers/offers.module#offersModule"
      loadChildren: () => import('src/app/offers/offers.module').then(m => m.OffersModule)
   },
-   
 ];
 
 @NgModule({
