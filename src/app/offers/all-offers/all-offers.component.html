@@ -1,13 +1,13 @@
-<h3>Offers</h3>
+<h3>Offres</h3>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<table class="table table-hover">
-  <thead>
-    <tr class="table-primary">
+<table class="table table-hover" id="table">
+ <thead id="aj">
+    <tr>
 
-      <th scope="col">Name</th>
-      <th scope="col">ville depart</th>
-      <th scope="col">ville arrive</th>
-      <th scope="col">date offre</th>
+      <th scope="col">Nom De l'Employé</th>
+      <th scope="col" >Ville De Départ</th>
+      <th scope="col">Ville D'arrivée</th>
+      <th scope="col">Date De l'Offre</th>
       <th></th>
     </tr>
   </thead>
@@ -21,14 +21,10 @@
       <td>{{offer.villeD}}</td>
       <td>{{offer.villeA}}</td>
       <td>{{offer.dateO}}</td>
-    <!--  <td>
-                            <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>-->
+
 
       <th>
-        <a class="add" title="Add" data-toggle="tooltip"(click)=editOffer(offer)><i class="material-icons">&#xE254; </i></a>
+        <a class="add" title="Edit" data-toggle="tooltip"(click)=editOffer(offer)><i class="material-icons">&#xE254; </i></a>
         <br>
         <a class="delete" title="Delete" data-toggle="tooltip"(click)=deleteOffer(offer)><i class="material-icons">&#xE872;</i></a>
       </th>
