@@ -39,7 +39,7 @@ export class AddOfferComponent implements OnInit {
 
      this.store.dispatch(new offerActions.CreateOffer(newOffer));
      this.offerForm.reset();
-   
+
 
 
 

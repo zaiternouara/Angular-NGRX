@@ -9,7 +9,6 @@ import { EffectsModule, Actions } from "@ngrx/effects";
 import { OfferComponent } from './offer/offer.component';
 import { AddOfferComponent } from './add-offer/add-offer.component';
 import { UpdateOfferComponent } from './update-offer/update-offer.component';
-import { DeleteOfferComponent } from './delete-offer/delete-offer.component';
 import { AllOffersComponent } from './all-offers/all-offers.component';
  import { SearchfilterPipe } from './all-offers/searchfilter.pipe';
 
@@ -30,8 +29,7 @@ const OfferRoutes: Routes = [
     OfferComponent,
     AddOfferComponent,
     UpdateOfferComponent,
-    DeleteOfferComponent,
-    AllOffersComponent,
+     AllOffersComponent,
     SearchfilterPipe
   ]
 
