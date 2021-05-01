@@ -1,32 +1,18 @@
 {
   "offers": [
     {
-      "name": "Amira Benrabah",
-      "villeD": "ALGER",
-      "villeA": "ALGER",
-      "dateO": "",
+      "name": "Nouara Zaiter ",
+      "villeD": "Alger",
+      "villeA": "El-Harrach",
+      "dateO": "2021-04-30",
       "id": 1
     },
     {
-      "name": "NOUARA Zaiter",
-      "villeD": "BOUMERDES",
-      "villeA": "HARRACH",
-      "dateO": "",
+      "name": "Amira Benrabah",
+      "villeD": "Alger",
+      "villeA": "Zeralda",
+      "dateO": "2021-05-09",
       "id": 2
-    },
-    {
-      "name": "Ttest",
-      "villeD": "Hey",
-      "villeA": "go",
-      "dateO": "",
-      "id": 3
-    },
-    {
-      "name": "hey",
-      "villeD": "kk",
-      "villeA": "j",
-      "dateO": "2021-05-12",
-      "id": 4
     }
   ]
 }
