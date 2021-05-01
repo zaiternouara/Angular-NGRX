@@ -55,6 +55,7 @@ export class UpdateOfferComponent implements OnInit {
       };
 
       this.store.dispatch(new offerActions.UpdateOffer(updatedOffer))
+      this.offerForm.reset();
     }
 
 }
