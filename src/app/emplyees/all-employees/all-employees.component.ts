@@ -24,7 +24,7 @@ export class AllEmployeesComponent implements OnInit {
        this.error$ = this.store.pipe(select(fromEmployee.getError));
     }
     deleteEmployee(employee: Employee) {
-    if (confirm("Are You Sure You want to Delete the User?")) {
+    if (confirm("Êtes-vous sûr de vouloir supprimer cet employé ?")) {
       this.store.dispatch(new employeeActions.DeleteEmployee(employee.id));
     }
   }
