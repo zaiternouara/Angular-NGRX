@@ -1,3 +1,6 @@
+#table {
+  border-color: #B2EBF2;
+}
 table.table th a.add {
     color: #27C46B;
 }
@@ -21,4 +24,11 @@ table.table th a {
     display: inline-block;
     margin: 0 5px;
     min-width: 24px;
+}
+h3{
+  color: #FF5722;
+  font-style: italic;
+}
+#aj{
+  background-color: #B2EBF2;
 }

@@ -1,32 +1,29 @@
 <div class="mt-4">
-  <h3>Edit Offer</h3>
+  <h3>Mettre à jour l'Offre</h3>
   <form [formGroup]="offerForm" (submit)="updateOffer()" class="form-inline mb-4">
 
     <label class="sr-only" for="Name">Name</label>
     <div class="input-group mb-2 mr-sm-2">
-      <input type="text" class="form-control" formControlName="name" placeholder="name">
+      <input type="text" class="form-control" formControlName="name" placeholder="Nom De l'Employé">
     </div>
 
     <label class="sr-only" for="VilleD">ville depart</label>
     <div class="input-group mb-2 mr-sm-2">
-      <input type="text" class="form-control" formControlName="villeD" placeholder="ville depart">
+      <input type="text" class="form-control" formControlName="villeD" placeholder="Ville De Départ">
     </div>
 
     <label class="sr-only" for="VilleA">ville arrive</label>
     <div class="input-group mb-2 mr-sm-2">
-      <input type="text" class="form-control" formControlName="villeA" placeholder="ville arrive">
+      <input type="text" class="form-control" formControlName="villeA" placeholder="Ville D'arrivée">
     </div>
 
     <label class="sr-only" for="dateO">date de loffre</label>
     <div class="input-group mb-2 mr-sm-2">
-      <select formControlName="dateO" class="form-control">
-        <option>Basic</option>
-        <option>Pro</option>
-        <option>Platinum</option>
-      </select>
+       <input   formControlName="dateO" class="form-control" type="date" id="dateO" >
+
     </div>
 
-    <button type="submit" class="btn btn-primary mb-2">Update Offer</button>
+    <button type="submit" class="btn btn-primary mb-2" id ="maj">Mettre à jour l'offre</button>
 
   </form>
 </div>

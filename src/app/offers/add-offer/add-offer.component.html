@@ -1,29 +1,33 @@
-<h3>Add Offer</h3>
+<div class="table-title">
+				<div class="row">
+					<div class="col-sm-6">
+						<h2>Gérer les<b> Offres</b></h2>
+					</div>
 
- 
+				</div>
+			</div>
+<h3>Ajouter Offre</h3>
+
+
   <form [formGroup]="offerForm" (submit)="createOffer()" class="form-inline mb-4">
-    <label class="sr-only" for="Name">Name</label>
+    <label class="sr-only" for="Name">Nom De l'Employé</label>
     <div class="input-group mb-2 mr-sm-2">
-      <input type="text" class="form-control" formControlName="name" placeholder="nom de employe">
+      <input type="text" class="form-control" formControlName="name" placeholder="Nom De l'Employé">
     </div>
 
-    <label class="sr-only" for="VilleD">ville de depart</label>
+    <label class="sr-only" for="VilleD">Ville De Départ</label>
     <div class="input-group mb-2 mr-sm-2">
-      <input type="text" class="form-control" formControlName="villeD" placeholder="ville de depart">
+      <input type="text" class="form-control" formControlName="villeD" placeholder="Ville De Départ">
     </div>
 
     <label class="sr-only" for="VilleA">Ville darrrive</label>
     <div class="input-group mb-2 mr-sm-2">
-      <input type="text" class="form-control" formControlName="villeA" placeholder="ville arrivee">
+      <input type="text" class="form-control" formControlName="villeA" placeholder="Ville D'arrivée">
     </div>
 
     <label class="sr-only" for="dateO">date de offre</label>
     <div class="input-group mb-2 mr-sm-2">
-      <select formControlName="dateO" class="form-control">
-        <option>Basic</option>
-        <option>Pro</option>
-        <option>Platinum</option>
-      </select>
+       <input  class="form-control" type="date" id="dateO" name="dateO"placeholder="Date De l'Offre">
     </div>
-    <button type="submit" class="btn btn-primary mb-2">Add Offer</button>
+    <button type="submit" class="btn btn-primary mb-2" id="ajouter">Ajouter Offre</button>
   </form>
