@@ -24,7 +24,7 @@ search:string;
      this.error$ = this.store.pipe(select(fromOffer.getError));
   }
   deleteOffer(offer: Offer) {
-  if (confirm("Êtes-vous sûr de vouloir supprimer cette offre?")) {
+  if (confirm("Are You Sure You want to Delete the User?")) {
     this.store.dispatch(new offerActions.DeleteOffer(offer.id));
   }
 }

@@ -1,0 +1,38 @@
+<div class="table-title">
+       <div class="row">
+         <div class="col-sm-6">
+           <h2>Gérer les<b> Emplyees</b></h2>
+         </div>
+
+       </div>
+     </div>
+<h3>Ajouter Emplyee</h3>
+
+
+ <form [formGroup]="employeeForm" (submit)="createEmployee()" class="form-inline mb-4" ngNativeValidate >
+   <label class="sr-only" for="Name">Nom De l'Employé</label>
+   <div class="input-group mb-2 mr-sm-2">
+     <input type="text" class="form-control" required formControlName="nom" placeholder="Nom De l'Employé">
+   </div>
+
+
+   <label class="sr-only" for="VilleD">Prenom De l'Employé</label>
+   <div class="input-group mb-2 mr-sm-2">
+     <input type="text" class="form-control" required formControlName="prenom" placeholder="Prenom De l'Employé">
+   </div>
+
+
+   <label class="sr-only" for="VilleA">Genre</label>
+   <div class="input-group mb-2 mr-sm-2">
+     <input type="text" class="form-control" required formControlName="genre" placeholder="Genre">
+   </div>
+
+
+
+   <label class="sr-only" for="VilleA">Adress Mail</label>
+   <div class="input-group mb-2 mr-sm-2">
+     <input type="text" class="form-control" required formControlName="adressMail" placeholder="Adress Mail">
+   </div>
+
+   <button type="submit" class="btn btn-primary mb-2" id="ajouter">Ajouter Employé</button>
+ </form>
