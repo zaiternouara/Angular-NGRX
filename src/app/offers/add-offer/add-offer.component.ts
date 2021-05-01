@@ -37,9 +37,12 @@ export class AddOfferComponent implements OnInit {
      dateO: this.offerForm.get("dateO").value
    };
 
-   this.store.dispatch(new offerActions.CreateOffer(newOffer));
+     this.store.dispatch(new offerActions.CreateOffer(newOffer));
+     this.offerForm.reset();
+   
 
-   this.offerForm.reset();
+
+
  }
 
 }

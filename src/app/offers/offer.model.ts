@@ -10,6 +10,6 @@ export interface Offer{
 export interface OfferSearch{
   id?: number;
   name: string;
-  ville: string; 
+  ville: string;
   dateO: string;
 }
