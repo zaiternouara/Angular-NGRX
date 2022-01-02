@@ -30,7 +30,7 @@ import { StoreDevtoolsModule } from "@ngrx/store-devtools";
     AppRoutingModule,
     EffectsModule.forRoot([]),
     HttpClientModule
-  ],
+  ], 
   providers: [{ provide: RouterStateSerializer, useClass: OfferSerializer }],
   declarations: [
     AppComponent,
